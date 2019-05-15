@@ -28,8 +28,8 @@ install:
 # run tests
 before_script: 
   - echo $TRAVIS_BUILD_DIR/
-  - echo $(%CD%)
+  - echo $(pwd)
   - cd $TRAVIS_BUILD_DIR/tests
-  - $(%CD%)
+  - echo "$(pwd)"
 script:
   - python -m unittest discover -s $TRAVIS_BUILD_DIR/tests -t $TRAVIS_BUILD_DIR/tests
