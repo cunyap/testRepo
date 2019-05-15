@@ -1,0 +1,17 @@
+language: python
+matrix:
+  include:
+    - name: "Python 3.7 on Windows"
+      os: windows
+      language: sh
+      python: "3.5"
+      before_install:
+        - choco install python3
+        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"      
+# install dependencies
+install:
+  - python --version
+  - pip install .
+# run tests
+script:
+  - python -m unittest discover -s $TRAVIS_BUILD_DIR/testRepo/tests -t $TRAVIS_BUILD_DIR/testRepo/tests
