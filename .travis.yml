@@ -26,5 +26,10 @@ matrix:
 install:
   - python --version
 # run tests
+before_script: 
+  - echo $TRAVIS_BUILD_DIR/
+  - echo dir
+  - cd $TRAVIS_BUILD_DIR/tests
+  - echo dir
 script:
   - python -m unittest discover -s $TRAVIS_BUILD_DIR/tests -t $TRAVIS_BUILD_DIR/tests
